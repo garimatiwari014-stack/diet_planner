@@ -10,11 +10,12 @@ export default function App() {
   const [gender, setGender] = useState("");
   const [goal, setGoal] = useState("");
   const [dietPlan, setDietPlan] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [showDietForm, setShowDietForm] = useState(false);
 
 
   // Generate diet plan function (PRESERVED - existing functionality)
+
   const generateDietPlan = async () => {
     setLoading(true);
 
@@ -145,7 +146,7 @@ Return in a clean format.
               <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               <div className="relative bg-white/40 backdrop-blur-xl border border-white/60 p-4 rounded-[2.5rem] shadow-2xl overflow-hidden">
                 <div className="w-full aspect-[4/5] rounded-[2rem] bg-cover bg-center mb-4" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCw9wHLyLVJWRDEGq61xuRUdLhRQymMdPfDYQFHnbtW-taHEtN4zc-6lEvSylGKRw-TnOcymSCj8NqiCxrh18SBJ5weu3gTRPXEg9ctcRftvXSF1gYv6bEVi6VSSN04EgAGHyE6_MUTxMQ7gYT6W917tErYrqwG_35HQ2Zjp5tbqPKDlup6DgLD5DEwXW4yOIFq909H-zGnVQO3wxfUGhUYww6_EAmxQNdo3jxJAaGy5k2XgH7ZITl-Cv-iOqznwXN_EVnryg39cRG2')" }}></div>
-                
+
                 {/* Floating Assistant Preview Card */}
                 <div className="absolute bottom-10 -left-6 glass-card p-4 rounded-2xl shadow-xl max-w-[240px]">
                   <div className="flex gap-3 items-start">
@@ -315,7 +316,7 @@ Return in a clean format.
                         <p className="text-sm text-on-surface-variant mt-1">AI-generated nutrition plan tailored for you</p>
                       </div>
                     </div>
-                    
+
                     <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md border border-outline-variant/20">
                       <div className="diet-plan-content space-y-6">
                         {dietPlan.split('\n').map((line, index) => {
@@ -333,7 +334,7 @@ Return in a clean format.
                               'Daily': 'calendar_today',
                               'Meal': 'restaurant'
                             };
-                            
+
                             let icon = 'circle';
                             for (let key in iconMap) {
                               if (headerText.toLowerCase().includes(key.toLowerCase())) {
@@ -341,7 +342,7 @@ Return in a clean format.
                                 break;
                               }
                             }
-                            
+
                             return (
                               <div key={index} className="flex items-center gap-3 pt-4 border-t border-outline-variant/30 first:border-0 first:pt-0">
                                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -370,7 +371,7 @@ Return in a clean format.
                           return null;
                         })}
                       </div>
-                      
+
                       <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-8 border-t border-outline-variant/30">
                         <button onClick={() => window.print()} className="flex-1 bg-primary text-on-primary px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
                           <span className="material-symbols-outlined text-xl">print</span>
@@ -442,10 +443,10 @@ Return in a clean format.
             <div className="bg-primary p-12 md:p-20 rounded-[3rem] shadow-2xl overflow-hidden relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-              
+
               <h2 className="text-3xl font-semibold text-on-primary mb-6 relative z-10">Ready to start your journey?</h2>
               <p className="text-lg text-on-primary/80 mb-12 max-w-xl mx-auto relative z-10">Join NutriSmart today and get your first personalized 30-day nutrition plan for free.</p>
-              
+
               <div className="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
                 <button onClick={scrollToDietForm} className="bg-white text-primary px-20 py-4 rounded-xl text-base font-semibold shadow-lg hover:bg-surface-bright transition-colors">Create My Profile</button>
                 <button className="bg-primary-container/20 border-2 border-white/40 text-white px-20 py-4 rounded-xl text-base font-semibold hover:bg-white/10 transition-colors">Learn More</button>
