@@ -13,6 +13,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [showDietForm, setShowDietForm] = useState(false);
 
+
   // Generate diet plan function (PRESERVED - existing functionality)
   const generateDietPlan = async () => {
     setLoading(true);
@@ -20,7 +21,7 @@ export default function App() {
     try {
       const groq = new Groq({
         apiKey: import.meta.env.VITE_GROQ_API_KEY,
-        dangerouslyAllowBrowser: true,
+        dangerouslyAllowBrowser: false,
       });
 
       const response = await groq.chat.completions.create({
