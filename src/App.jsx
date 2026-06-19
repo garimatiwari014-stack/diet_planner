@@ -10,7 +10,7 @@ export default function App() {
   const [gender, setGender] = useState("");
   const [goal, setGoal] = useState("");
   const [dietPlan, setDietPlan] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [showDietForm, setShowDietForm] = useState(false);
 
 
