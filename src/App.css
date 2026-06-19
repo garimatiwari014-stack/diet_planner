@@ -1,0 +1,189 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #006d36;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #005227;
+}
+
+
+/* Diet Plan Specific Styles */
+.diet-plan-content {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Print Styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  .diet-plan-content,
+  .diet-plan-content * {
+    visibility: visible;
+  }
+  
+  .diet-plan-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  
+  button {
+    display: none !important;
+  }
+  
+  header, footer, nav {
+    display: none !important;
+  }
+}
+
+/* Enhanced hover effects for diet plan items */
+.diet-plan-content p:hover {
+  color: #006d36;
+  transition: color 0.2s ease;
+}
+
+.diet-plan-content h4 {
+  position: relative;
+}
+
+.diet-plan-content h4::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4ade80;
+  transition: width 0.3s ease;
+}
+
+.diet-plan-content h4:hover::after {
+  width: 100%;
+}
+
+/* Smooth gradient background animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient-to-br {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Loading pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Tooltip styles for hover information */
+.group:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
